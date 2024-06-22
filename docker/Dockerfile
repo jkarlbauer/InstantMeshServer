@@ -44,6 +44,8 @@ RUN pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url h
 RUN pip install xformers==0.0.22.post7
 RUN pip install triton
 
+RUN pip install flask
+
 # change the working directory to the repository
 WORKDIR /workspace/instantmesh
 
@@ -54,4 +56,4 @@ RUN pip install -r requirements.txt
 COPY . /workspace/instantmesh
 
 # Run the command when the container starts
-CMD ["python", "app.py"]
+CMD ["python", "serverapp.py"]
